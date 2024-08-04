@@ -1,7 +1,7 @@
 package chipper
 
 import (
-	"mayilon/pkg/lib/chipper/aes"
+	"github.com/loganrk/go-chipper/aes"
 )
 
 type Chipper interface {
