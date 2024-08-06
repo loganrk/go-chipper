@@ -1,7 +1,7 @@
-package chipper
+package cipher
 
 import (
-	"github.com/loganrk/go-chipper/aes"
+	"github.com/loganrk/go-cipher/aes"
 )
 
 type Chipper interface {
@@ -9,7 +9,7 @@ type Chipper interface {
 	Decrypt(cryptoText string) (string, error)
 }
 
-func New(CryptoKey string) Chipper {
-	return aes.New(CryptoKey)
+func New(cryptoKey string) Chipper {
+	return aes.New(cryptoKey)
 
 }
