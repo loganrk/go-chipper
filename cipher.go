@@ -4,7 +4,7 @@ import (
 	"github.com/loganrk/go-cipher/aes"
 )
 
-type Chipper interface {
+type Cipher interface {
 	Encrypt(text string) (string, error)
 	Decrypt(cryptoText string) (string, error)
 }
