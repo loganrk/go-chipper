@@ -9,7 +9,7 @@ type Cipher interface {
 	Decrypt(cryptoText string) (string, error)
 }
 
-func New(cryptoKey string) Chipper {
+func New(cryptoKey string) Cipher {
 	return aes.New(cryptoKey)
 
 }
