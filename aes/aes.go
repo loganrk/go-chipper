@@ -9,17 +9,17 @@ import (
 	"io"
 )
 
-type aesChipper struct {
+type aesCipher struct {
 	cryptoKey string
 }
 
-func New(cryptoKey string) *aesChipper {
-	return &aesChipper{
+func New(cryptoKey string) *aesCipher {
+	return &aesCipher{
 		cryptoKey: cryptoKey,
 	}
 }
 
-func (a *aesChipper) Encrypt(text string) (string, error) {
+func (a *aesCipher) Encrypt(text string) (string, error) {
 
 	block, err := aes.NewCipher([]byte(a.cryptoKey))
 	if err != nil {
@@ -40,7 +40,7 @@ func (a *aesChipper) Encrypt(text string) (string, error) {
 
 }
 
-func (a *aesChipper) Decrypt(cryptoText string) (string, error) {
+func (a *aesCipher) Decrypt(cryptoText string) (string, error) {
 
 	ciphertext, _ := base64.StdEncoding.DecodeString(cryptoText)
 
